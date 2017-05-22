@@ -1,0 +1,30 @@
+/*
+    Document   : typo
+    Created on : 21st May, 2016, 04:24:12 PM
+    Author     : saorabhkumar
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/*
+ * minimal base styles
+ */
+
+
+/* Headers (h1,h2,etc) have no default font-size or margin,
+you'll want to define those yourself. */
+h1,h2,h3,h4,h5,h6 { font-weight: bold;text-align: left;padding:0 0 8px;color:#000; line-height:1em }
+
+/* Accessible focus treatment: people.opera.com/patrickl/experiments/keyboard/test */
+a{color: #999;text-decoration: none}
+
+a:hover, a:active { outline: none; }
+
+a, a:active, a:visited { outline: none }
+a:hover { color:#FFCC33; text-decoration: underline;}
+
+ol { list-style-type: decimal; }

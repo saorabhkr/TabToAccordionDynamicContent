@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="Assignment done by Saorabh Kumar, +918390721599, saorabh.kr@gmail.com">
+    <meta name="author" content="">
+
+    <!-- Default Meta Tags -->
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+
+    <!-- These Info will help full while sharing something on Facebook/pintrest -->
+    <meta property="fb:app_id" content=""/>
+    <meta property="og:type" content=""/>
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:description" content=""/>
+    <meta property="og:url" content=""/>
+
+    <!-- Twitter card-->
+    <meta name="twitter:widgets:csp" content=""/>
+    <meta name="twitter:card" content=""/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:app:name:iphone" content=""/>
+    <meta name="twitter:app:name:ipad" content=""/>
+    <meta name="twitter:app:name:googleplay" content=""/>
+    <meta name="twitter:app:id:iphone" content=""/>
+    <meta name="twitter:app:id:ipad" content=""/>
+    <meta name="twitter:app:id:googleplay" content=""/>
+
+    <!-- Place favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="icon" href="images/favicon.ico" type="image/png"/>
+
+    <!-- Custom styles for this template -->
+
+    <!-- CSS: implied media="all" -->
+    <!--
+      External style sheets in a sequence as per w3c Standard
+      - reset(As per YUI)
+      - typo(Standard collection for typo)
+      - layout(Collection of those css which is being used through out the web sites but related to layouting)
+      - common(Collection of those css which is being used through out the web sites)
+      - style(The main styling files)
+    -->
+
+    <link href="css/reset.css" rel="stylesheet"/>
+    <link href="css/typo.css" rel="stylesheet"/>
+    <link href="css/layout.css" rel="stylesheet"/>
+    <link href="css/common.css" rel="stylesheet"/>
+    <link href="css/style.css" rel="stylesheet"/>
+    <title>Question Two</title>
+  </head>
+
+  <body>
+    <!-- Start Of Header Block-->
+    <div class="container">
+      <header class="header">Header</header>
+      <!-- End Of Header Block-->
+      <!--Start Section-->
+        <section class="tabs">
+            <input id="tab-1" type="radio" name="radio-set" class="tab tab-selector-1" data-active-tab="1" checked="checked" data-file-to-load-url="tab1"/>
+            <label for="tab-1" class="tab-label-1">Tab 1</label>
+            <div class="content content-1">
+                
+            </div>
+
+            <input id="tab-2" type="radio" name="radio-set" class="tab tab-selector-2" data-active-tab="2" data-file-to-load-url="tab2"/>
+            <label for="tab-2" class="tab-label-2">Tab 2</label>
+            <div class="content content-2">
+                
+            </div>
+
+            <input id="tab-3" type="radio" name="radio-set" class="tab tab-selector-3" data-active-tab="3" data-file-to-load-url="tab3"/>
+            <label for="tab-3" class="tab-label-3">Tab 3</label>
+            <div class="content content-3">
+                
+            </div>
+
+            <input id="tab-4" type="radio" name="radio-set" class="tab tab-selector-4" data-active-tab="4" data-file-to-load-url="tab4"/>
+            <label for="tab-4" class="tab-label-4">Tab 4</label>
+            <div class="content content-4">
+                
+            </div>
+        </section>
+      <!--End Section -->
+      <footer>
+        <p class="align-center">
+          Footer Block
+        </p>
+      </footer>
+    </div>
+    <!-- Lib JavaScript -->
+    <!-- ================================================== -->
+    <!-- Placed at the end of the document so nothing blocks to render -->
+    <script src="js/lib/jquery.min.js?v=1"></script>
+    
+    <!-- Custome JavaScript -->
+    <script src="js/fileUtils.js?v=1"></script>
+    <script src="js/fileView.js?v=1"></script>
+    <script src="js/loadData.js?v=1"></script>
+    <script>
+      $(function () {
+        //Loading default file for active tab
+        //Exposing init in html that it can be replaced from backed.
+        var checkedRadio = $("input[name=radio-set]:checked")
+        if(checkedRadio){
+             var cData      = checkedRadio.data("file-to-load-url")
+                 activeTab  = checkedRadio.data("active-tab");
+                loadFileData.init('js/staticData/'+cData+'.txt', activeTab);
+        }
+
+        $("input[name='radio-set']").on("click",function(){
+            var jQEL        = $(this)
+                ,cData      = jQEL.data("file-to-load-url")
+                ,activeTab  = jQEL.data("active-tab")
+            ;
+            loadFileData.init('js/staticData/'+cData+'.txt', activeTab);
+        });
+        
+        
+      });
+    </script>
+  </body>
+</html>

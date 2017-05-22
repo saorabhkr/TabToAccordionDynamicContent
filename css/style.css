@@ -1,0 +1,130 @@
+/*
+    Document   : style
+    Created on : 21st May, 2016, 04:24:12 PM
+    Author     : Saorabh
+    Description:
+    Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+/******************************************************
+  @group the basic Headre CSS : Start
+******************************************************/
+
+.header, footer p {
+  padding: 20px;
+  text-align: center;
+  color: #202020;
+  letter-spacing: .1em;
+  font-size: 40px;
+}
+    
+/******************************************************
+  @group the basic Headre CSS : End
+******************************************************/
+
+/******************************************************
+  @group the basic Main Content CSS : Start
+******************************************************/
+
+.tabs {
+  position: relative;
+  min-height: 100vh;
+  border-top: 1px solid lightgrey;
+}
+
+.tab {
+  width: 100%;
+  height: 3em;
+  position: absolute;
+  visibility: hidden;
+}
+.content h3{
+  font-size: 24px;
+}
+label {
+  width: 100%;
+  height: 3em;
+  margin: 0;
+  display: block;
+  line-height: 3em;
+  text-align: center;
+  background: lightgrey;
+  cursor: pointer;
+  -webkit-transition: background .25s ease;
+  transition: background .25s ease;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-bottom: 1px solid #c1c2c2;
+}
+
+:checked + label + .content {
+  border: none;
+  display: block;
+}
+
+:checked + label {
+  background: #fff;
+  color: #000;
+}
+
+.content {
+  padding: 3em;
+  display: none;
+  background: #fff;
+}
+/******************************************************
+  @group the basic media queries  : Starts
+******************************************************/
+@media screen and (min-width: 30em){
+  .tab {
+    width: 25%;
+    float: left;
+  }  
+}
+
+@media screen and (min-width: 30em) {
+  label {
+    width: 25%;
+    border-bottom: 0;
+    float: left;
+    position: static;
+    border-left: 1px solid #c1c2c2;
+    border-width: 0 1px 1px;
+  
+  }
+
+  :checked + label + .content {
+    border: 1px solid lightgrey;
+    border-top: 0;
+    display: block;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .content {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 3em;
+    z-index: -1;
+    opacity: 0;
+    background: white;
+    -webkit-transition: opacity .25s ease;
+    transition: opacity .25s ease;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  :checked + label + .content {
+    z-index: 1;
+    opacity: 1;
+  }
+}
+
+/******************************************************
+  @group the basic media queries  : Ends
+******************************************************/
